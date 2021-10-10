@@ -82,4 +82,18 @@ services:
 volumes:
   postgres_data:
 ```
+
+### Running instructions
+The `.env` folder is missing from the repo and must be created.  
+1. Create a .env folder inside the fastapi-celery-redis folder
+2. Create a file named `.dev-sample` inside `/fastapi-celery-redis/.env/` folder
+```
+FASTAPI_CONFIG=development
+DATABASE_URL=postgresql://fastapi_celery:fastapi_celery@db/fastapi_celery
+CELERY_BROKER_URL=redis://redis:6379/0
+CELERY_RESULT_BACKEND=redis://redis:6379/0
+#CELERY_TASK_ALWAYS_EAGER: bool = True
+```
+
+This will set the correct environment variables so the docker-compose command will work now.  
 `docker-compose up -d`

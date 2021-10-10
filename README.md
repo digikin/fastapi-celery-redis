@@ -94,6 +94,6 @@ CELERY_BROKER_URL=redis://redis:6379/0
 CELERY_RESULT_BACKEND=redis://redis:6379/0
 #CELERY_TASK_ALWAYS_EAGER: bool = True
 ```
-
+The `CELERY_TASK_ALWAYS_EAGER` variable is for debugging celery tasks. (use only if needed)
 This will set the correct environment variables so the docker-compose command will work now.  
 `docker-compose up -d`
